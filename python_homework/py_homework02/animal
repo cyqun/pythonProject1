@@ -1,0 +1,11 @@
+Cat:
+  name: Jim
+  color: 橘红色
+  age: 4
+  sex: 母
+
+Dog:
+  name: 奥斯卡
+  color: 黄色
+  age: 3
+  sex: 公
