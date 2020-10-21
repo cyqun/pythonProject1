@@ -42,7 +42,7 @@ class Dog(Animal):
 
 
 if __name__ == '__main__':
-    with open("animal.yaml") as yl:
+    with open("animal.yml") as yl:
         animal_data = yaml.load(yl)
     cat = Cat(animal_data[0]['cat']['name'], animal_data[0]['cat']['color'], animal_data[0]['cat']['age'], animal_data[0]['cat']['sex'])
     cat.catch()
