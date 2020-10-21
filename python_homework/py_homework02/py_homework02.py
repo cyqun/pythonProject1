@@ -42,9 +42,11 @@ class Dog(Animal):
 
 
 if __name__ == '__main__':
-    with open("animal.yml") as yl:
+    with open("animal.yml",encoding='utf-8') as yl:
         animal_data = yaml.load(yl)
-    cat = Cat(animal_data[0]['cat']['name'], animal_data[0]['cat']['color'], animal_data[0]['cat']['age'], animal_data[0]['cat']['sex'])
+    cat = Cat(**animal_data["Cat"])
+    print(f"猫的姓名：{cat.name}，颜色：{cat.color}，年龄：{cat.age}岁，性别：{cat.gender}，毛发：{cat.hair}")
     cat.catch()
-    dog = Dog(animal_data[1]['dog']['name'], animal_data[1]['dog']['color'], animal_data[1]['dog']['age'], animal_data[1]['dog']['sex'])
+    dog = Dog(**animal_data["Dog"])
+    print(f"狗的姓名：{dog.name}，颜色：{dog.color}，年龄：{dog.age}岁，性别：{dog.gender}，毛发：{dog.hair}")
     dog.housekeeping()
